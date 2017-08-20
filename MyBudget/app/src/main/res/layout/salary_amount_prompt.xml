@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+    android:layout_margin="@dimen/activity_horizontal_margin"
+    android:padding="@dimen/activity_horizontal_margin">
+
+    <TextView
+        android:id="@+id/which_salary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter salary amount"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/income_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:inputType="numberDecimal"
+        android:maxLength="6"
+        android:lines="1"
+        android:padding="16dp"
+        android:layout_margin="@dimen/activity_horizontal_margin"/>
+</LinearLayout>

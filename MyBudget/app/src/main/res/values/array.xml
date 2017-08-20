@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="status">
+        <item></item>
+        <item>paid</item>
+        <item>posted</item>
+    </string-array>
+
+    <string-array name="edit_a_bill">
+        <item>Set Status</item>
+        <item>Edit</item>
+    </string-array>
+</resources>

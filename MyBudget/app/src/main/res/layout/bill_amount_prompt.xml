@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+    android:gravity="center_horizontal">
+
+    <TextView
+        style="@style/prompt_titles"
+        android:text="Amount"/>
+
+    <EditText
+    android:id="@+id/promt_amount"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:maxLength="7"
+    android:lines="1"
+    android:gravity="center"
+    android:inputType="numberDecimal"
+    android:background="@drawable/border"
+    android:padding="12dp"
+    android:layout_marginLeft="12dp"
+    android:layout_marginRight="12dp"/>
+
+    <TextView
+        android:text="Notes"
+        style="@style/prompt_titles"/>
+
+    <EditText
+        android:id="@+id/promt_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lines="1"
+        android:inputType="text"
+        android:background="@drawable/border"
+        android:padding="12dp"
+      android:layout_marginTop="4dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"/>
+</LinearLayout>
