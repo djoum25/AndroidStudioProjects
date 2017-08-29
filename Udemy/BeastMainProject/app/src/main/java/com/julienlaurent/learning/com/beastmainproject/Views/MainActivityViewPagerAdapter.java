@@ -12,8 +12,8 @@ import com.julienlaurent.learning.com.beastmainproject.Fragments.RushFragment;
  * Created by djoum on 7/31/17.
  */
 
-public class MainActivityViewPager extends FragmentStatePagerAdapter {
-    public MainActivityViewPager(FragmentManager fm) {
+public class MainActivityViewPagerAdapter extends FragmentStatePagerAdapter {
+    public MainActivityViewPagerAdapter(FragmentManager fm) {
         super(fm);
     }
 
@@ -38,7 +38,7 @@ public class MainActivityViewPager extends FragmentStatePagerAdapter {
 
     @Override
     public int getCount() {
-        return 0;
+        return 3;
     }
 
     @Override
@@ -55,7 +55,7 @@ public class MainActivityViewPager extends FragmentStatePagerAdapter {
                 title = "Rush";
                 break;
             default:
-                title = null;
+                return null;
         }
         return title;
     }

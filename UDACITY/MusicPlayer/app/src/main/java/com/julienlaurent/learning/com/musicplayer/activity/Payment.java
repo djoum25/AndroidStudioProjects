@@ -1,4 +1,13 @@
 package com.julienlaurent.learning.com.musicplayer.activity;
+/*
+    Programmer name:        Julien Laurent
+    Date:                   July 26, 2017
+    Class Description:      This classs controls the payment activity
+                            of the app.
+                            customer will enter their credit card info and after validation
+                            it will display a toast message for the amout that will be charge on the card
+
+ */
 
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
@@ -12,31 +21,23 @@ import android.widget.Toast;
 
 import com.julienlaurent.learning.com.musicplayer.R;
 import com.julienlaurent.learning.com.musicplayer.model.MusicLibraryData;
-import com.stripe.android.Stripe;
 import com.stripe.android.model.Card;
-
-import java.text.NumberFormat;
 
 public class Payment extends AppCompatActivity implements View.OnClickListener{
     private EditText cardNumberEt;
     private EditText cardExpDateEt;
     private EditText cardCvvEt;
-    private Button submitButton;
     private double totalToPay;
-    private MusicLibraryData library;
-    private Card card;
-    private Stripe stripe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        NumberFormat format = NumberFormat.getCurrencyInstance();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
         cardNumberEt = (EditText) findViewById(R.id.card_number_et);
         cardExpDateEt = (EditText) findViewById(R.id.card_exp_date_et);
         cardCvvEt = (EditText) findViewById(R.id.card_cvv_et);
-        submitButton = (Button) findViewById(R.id.submitButton);
-        library = new MusicLibraryData();
+        Button submitButton = (Button) findViewById(R.id.submitButton);
+        MusicLibraryData library = new MusicLibraryData();
         ActionBar toolbar = getSupportActionBar();
         toolbar.setTitle(R.string.card_info);
         Intent intent = getIntent();
@@ -63,9 +64,7 @@ public class Payment extends AppCompatActivity implements View.OnClickListener{
             finish();
         }else{
             Toast.makeText(this, "Invalid card", Toast.LENGTH_SHORT).show();
-            return;
         }
-
     }
 
     /**
@@ -78,7 +77,7 @@ public class Payment extends AppCompatActivity implements View.OnClickListener{
             if (!TextUtils.isEmpty(cardNumberEt.getText().toString())
                 &&!TextUtils.isEmpty(cardExpDateEt.getText().toString())
                 && !TextUtils.isEmpty(cardCvvEt.getText().toString())){
-                card = new Card(cardNumberEt.getText().toString(),
+                Card card = new Card(cardNumberEt.getText().toString(),
                     Integer.parseInt(cardExpDateEt.getText().toString().substring(0, 2)),
                     Integer.parseInt(cardExpDateEt.getText().toString().substring(2)),
                     cardCvvEt.getText().toString());
